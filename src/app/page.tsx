@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Carousel } from "@/components/ui/carousel";
 
+
 export default async function Home() {
   const products = await stripe.products.list({
     expand: ["data.default_price"],

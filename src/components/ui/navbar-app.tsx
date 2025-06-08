@@ -36,9 +36,7 @@ export const NavbarApp = () => {
           <Link href="/products" className="hover:text-blue-600">
             Products
           </Link>
-          <Link href="/cart" className="hover:text-blue-600">
-            Cart
-          </Link>
+          
           <Link href="/checkout" className="hover:text-blue-600">
             Checkout
           </Link>
@@ -73,9 +71,7 @@ export const NavbarApp = () => {
             <li>
               <Link href={"/products"} className="block hover:text-blue-600">Products</Link>
             </li>
-            <li>
-              <Link href={"/cart"} className="block hover:text-blue-600">Cart</Link>
-            </li>
+        
             <li>
               <Link href={"/checkout"} className="block hover:text-blue-600">Checkout</Link>
             </li>

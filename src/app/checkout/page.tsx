@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCartStore } from "@/store/cart-store";
 import { checkoutAction } from "./checkoutAction";
+import Link from "next/link";
+
+import Image from "next/image";
 
 export default function CheckoutPage() {
   const { items, removeItem, addItem, clearCart } = useCartStore();
@@ -12,10 +15,43 @@ export default function CheckoutPage() {
   );
 
   if (total === 0 || items.length === 0) {
+    
     return (
       <div>
-        <h1>Your Cart is Empty</h1>
-      </div>
+      <section className="rounded bg-neutral-100 py-8 sm:py-12 ">
+        <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px-16 md:grid-cols-2">
+          <div className="max-w-md space-y-4">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Your Cart is Empty
+            </h2>
+            <p className="text-neutral-600">
+              Explore our products.
+            </p>
+            <Button
+              asChild
+              variant="default"
+              className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-black text-white"
+            >
+              <Link
+                href="/products"
+                className="inline-flex items-center justify-center rounded-full px-6 py-3"
+              >
+                Browse All Products
+              </Link>
+            </Button>
+          </div>
+           <Image
+          src="/images/test.png"    
+          alt="Carrito vacío"
+          width={450}
+          height={450}
+          className="rounded object-contain"
+        />
+         
+        </div>
+      </section>
+     
+    </div>
     );
   }
 
